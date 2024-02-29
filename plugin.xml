@@ -12,6 +12,6 @@
             </feature>
         </config-file>
         <source-file src="src/ios/sayHelloPlugin.h" />
-        <source-file src="src/ios/sayHelloPlugin.m" />
+        <source-file src="src/ios/sayHelloPlugin.swift" />
     </platform>
 </plugin>
