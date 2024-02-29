@@ -1,0 +1,17 @@
+{
+  "name": "say-hello-plugin",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "com.test.sayHello",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC"
+}
