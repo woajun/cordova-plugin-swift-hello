@@ -1,13 +1,4 @@
-/********* sayHelloPlugin.m Cordova Plugin Implementation *******/
-
-#import <Cordova/CDV.h>
-
-@interface sayHelloPlugin : CDVPlugin
-
-- (void)coolMethod:(CDVInvokedUrlCommand*)command;
-- (void)sayHello:(CDVInvokedUrlCommand*)command;
-
-@end
+#import "sayHelloPlugin.h"
 
 @implementation sayHelloPlugin
 

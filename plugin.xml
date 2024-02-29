@@ -11,6 +11,7 @@
                 <param name="ios-package" value="sayHelloPlugin" />
             </feature>
         </config-file>
+        <source-file src="src/ios/sayHelloPlugin.h" />
         <source-file src="src/ios/sayHelloPlugin.m" />
     </platform>
 </plugin>
