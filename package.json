@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "cordova": {
-    "id": "com.test.sayHello",
+    "id": "com.test.sayhello",
     "platforms": [
       "ios"
     ]
