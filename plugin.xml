@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.test.sayhello" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin id="odn-cordova-plugin-kakao" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>sayHelloPlugin</name>
-    <js-module name="sayHelloPlugin" src="www/sayHelloPlugin.js">
-        <clobbers target="cordova.plugins.sayHelloPlugin" />
+    <name>OdnCordovaPluginKakao</name>
+    <js-module name="OdnCordovaPluginKakao" src="www/OdnCordovaPluginKakao.js">
+        <clobbers target="cordova.plugins.OdnCordovaPluginKakao" />
     </js-module>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="sayHelloPlugin">
-                <param name="ios-package" value="sayHelloPlugin" />
+            <feature name="OdnCordovaPluginKakao">
+                <param name="ios-package" value="OdnCordovaPluginKakao" />
             </feature>
         </config-file>
-        <source-file src="src/ios/sayHelloPlugin.h" />
-        <source-file src="src/ios/sayHelloPlugin.swift" />
+        <source-file src="src/ios/OdnCordovaPluginKakao.h" />
+        <source-file src="src/ios/OdnCordovaPluginKakao.swift" />
     </platform>
 </plugin>

@@ -3,8 +3,8 @@ import KakaoSDKCommon
 import KakaoSDKTalk
 import UIKit
 
-@objc(sayHelloPlugin)
-class sayHelloPlugin: CDVPlugin {
+@objc(OdnCordovaPluginKakao)
+class OdnCordovaPluginKakao: CDVPlugin {
 
   @objc(sayHello:)
   func sayHello(_ command: CDVInvokedUrlCommand) {

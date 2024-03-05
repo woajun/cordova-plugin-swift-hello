@@ -1,9 +1,9 @@
 {
-  "name": "say-hello-plugin",
+  "name": "odn-cordova-plugin-kakao",
   "version": "0.0.1",
   "description": "",
   "cordova": {
-    "id": "com.test.sayhello",
+    "id": "odn-cordova-plugin-kakao",
     "platforms": [
       "ios"
     ]
