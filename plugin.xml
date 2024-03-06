@@ -57,6 +57,9 @@
                 <param name="ios-package" value="OdnCordovaPluginKakao" />
             </feature>
         </config-file>
+        <config-file target="*-Info.plist" parent="KAKAO_APP_KEY">
+            <string>$KAKAO_APP_KEY</string>
+        </config-file>
         <source-file src="src/ios/OdnCordovaPluginKakao.h" />
         <source-file src="src/ios/OdnCordovaPluginKakao.swift" />
     </platform>

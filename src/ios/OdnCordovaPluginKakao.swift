@@ -6,16 +6,14 @@ import UIKit
 @objc(OdnCordovaPluginKakao)
 class OdnCordovaPluginKakao: CDVPlugin {
 
-  @objc(initKakaoSDK:)
-  func initKakaoSDK(_ command: CDVInvokedUrlCommand) {
-    guard let appKey = command.arguments.first as? String else {
+  override init() {
+    super.init()
+    guard let appKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as? String else {
       return
     }
 
     KakaoSDK.initSDK(appKey: appKey)
-
-    let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK)
-    self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
+    print("[kakao initialized]")
   }
 
   @objc(addChannel:)
