@@ -5,6 +5,52 @@
     <js-module name="OdnCordovaPluginKakao" src="www/OdnCordovaPluginKakao.js">
         <clobbers target="cordova.plugins.OdnCordovaPluginKakao" />
     </js-module>
+
+    <preference name="KAKAO_APP_KEY" />
+
+    <hook type="after_prepare" src="hooks/postinstall.js" />
+    <hook type="after_plugin_add" src="hooks/postinstall.js" />
+    <hook type="after_platform_add" src="hooks/postinstall.js" />
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="OdnCordovaPluginKakao">
+                <param name="onload" value="true" />
+                <param name="android-package" value="com.odn.cordova.plugin.kakao.OdnCordovaPluginKakao" />
+            </feature>
+            <access origin="https://*.kakao.com" />
+            <access origin="https://*.kakao.co.kr" />
+            <access origin="https://*.kakaocdn.net" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="com.kakao.sdk.AppKey" android:value="$KAKAO_APP_KEY" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity 
+            android:name="com.kakao.sdk.talk.FollowChannelHandlerActivity"
+            android:exported="true">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    
+                    <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://channel" -->
+                    <data android:host="channel" android:scheme="kakao$KAKAO_APP_KEY" />
+                </intent-filter>
+            </activity>
+        </config-file>
+        
+        <framework src="src/android/kakao.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/android/OdnCordovaPluginKakao.kt" target-dir="java/com/odn/cordova/plugin/kakao" />
+    </platform>
+
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="OdnCordovaPluginKakao">
